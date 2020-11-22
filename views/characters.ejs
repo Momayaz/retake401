@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Characters</h1>
+    </header>
+    <main>
+        <%result.forEach(element=>{%>
+            <section>
+                <img src="<%=element.image%>" alt="">
+                <h2>Name<%=element.name%></h2>
+                <p>Patronus<%=element.patronus%></p>
+                <p>Status:<%=element.alive%></p>
+                <form action="/my-characters" method="POST">
+                    <input type="hidden" name="name" value="<%=element.name%>">
+                    <input type="hidden" name="patronus" value="<%=element.patronus%>">
+                    <input type="hidden" name="alive" value="<%=element.alive%>">
+                    <input type="hidden" name="image" value="<%=element.image%>">
+                    <button type="submit">Save Character</button>
+                </form>
+            </section>
+        <%})%>
+    </main>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <form action="/character/<%=result.id%>?_method=PUT" method="POST">
+         <label for="name">Character Name</label><br>
+         <input type="text" name="name" value="<%=result.name%>"><br>
+         <label for="patronus">Character Patronus</label><br>
+         <input type="text" name="patronus" value="<%=result.patronus%>"><br>
+         <label for="alive">Character Status</label><select name="alive" value="<result.alive>">
+             <option value="alive">Alive</option>
+             <option value="dead">Deasd</option>
+         </select><br>
+         <button type="submit">UPDATE DETAILS</button>
+        </form>
+        <form action="/character/<%=result.id%>?_method=DELETE" method="POST">
+        
+            <button type="submit">DELETE CHARACTER</button>
+        </form>
+    </main>
+</body>
+</html>
